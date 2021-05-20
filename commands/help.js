@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const { MessageEmbed } = require('discord.js')
 const embed = new MessageEmbed()
+const config = require('../config.json')
 
 module.exports = {
     commands: 'help',
@@ -12,7 +13,7 @@ module.exports = {
             .setTitle('Help Commands')
             .setURL('https://discord.gg/v2ftGAeNs3')
             .setAuthor(message.author.username)
-            .setFooter(`Mr.Claws™#1111 - VERSION 0.0.2`)
+            .setFooter(`MiningAway - VERSION ${config.Version}`)
             .setColor('#ad0707')
             .addFields(
                 {
@@ -22,12 +23,17 @@ module.exports = {
                 },
                 {
                     name: '`Other commands for Economy`',
-                    value: '`>support`, `>pay (COMING SOON)`, `>balance`,`>inventory`,`>sell all`,',
+                    value: '`>support`, `>pay (COMING SOON)`, `>shop`, `>buy` `>balance`,`>inventory`,`>sell`, `>build`',
                 },
                 {
                     name: '`User Commands`',
-                    value: '`>math (COMING SOON)`, `>invite`'
-                }
+                    value: '`>math (COMING SOON)`, `>invite`, `>credit`, `>botinfo`, `>truth`, `>dare`, `>website`, `>github`'
+                },
+                 {
+                    name: '`Moderation Commands (COMING SOON)`',
+                    value: '`kick (coming soon)`',
+                    inline: true,
+                },
             )
 
         message.channel.send(help)
